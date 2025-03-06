@@ -107,7 +107,7 @@ body {
   font-size: 13px;
   line-height: 1.3;
   font-weight: 400;
-  color: #0f0d0e;
+  color: #000000;
   margin-bottom: 7px;
 }
 
@@ -132,6 +132,11 @@ body {
   background-position-y: center;
 }
 
+.answer-feedback:focus {
+  outline: none;
+  border: 1px solid #b59f5b;
+}
+
 .big-answer-feedback {
   resize: none;
   box-sizing: border-box;
@@ -147,6 +152,11 @@ body {
   padding: 18px 18px;
 }
 
+.big-answer-feedback:focus {
+  outline: none;
+  border: 1px solid #b59f5b;
+}
+
 .form-radio {
   margin-bottom: 30px;
 }
@@ -157,7 +167,7 @@ body {
 
 .radio-group {
   font-size: 13px;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 .radio-group:nth-of-type(n + 2) {
@@ -192,6 +202,10 @@ body {
   text-transform: uppercase;
   color: #ffffff;
   font-weight: 700;
+}
+
+.feedback-button:hover {
+  background-color: #323232;
 }
 
 .header {
@@ -859,3 +873,4 @@ body {
   text-decoration: none;
   color: #999999;
 }
+
