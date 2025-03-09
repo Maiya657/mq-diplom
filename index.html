@@ -10,19 +10,20 @@
 
 <body>
   <div class="hidden">
-    <div class="overlay"></div>
     <div class="popup">
-      <button class="close"></button>
+      <button class="close" type="submit">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
       <form class="feedback">
         <h2 class="popup-title">Ваш фидбэк</h2>
-        <label class="question-feedback">Как часто вы заходите на сайт?</label>
-        <select class="answer-feedback">
+        <label class="question-feedback" for="select">Как часто вы заходите на сайт?</label>
+        <select class="answer-feedback" id="select">
           <option>Почти каждый день</option>
           <option>Раз в несколько дней</option>
           <option>Раз в несколько недель</option>
           <option>Несколько раз в год</option>
         </select>
-        <label class="question-feedback">Вы подписаны на e-mail рассылку?</label>
+        <div class="question-feedback">Вы подписаны на e-mail рассылку?</div>
         <div class="form-radio">
           <label class="radio-group">
             <input type="radio" class="radio" name="radio-group" checked />
@@ -33,8 +34,8 @@
             <span class="radio-group-text">Нет</span>
           </label>
         </div>
-        <label class="question-feedback">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</label>
-        <textarea class="big-answer-feedback" placeholder="Может, больше рецептов?"></textarea>
+        <label class="question-feedback" for="feedback">Расскажите, какой контент вы хотели бы видеть на нашем сайте?</label>
+        <textarea class="big-answer-feedback" placeholder="Может, больше рецептов?" id="feedback"></textarea>
         <button class="feedback-button" type="submit">Отправить</button> 
       </form>
     </div>
@@ -55,6 +56,9 @@
             <li class="menu-item"><a class="link" href="#0">Контакты</a></li>
           </ul>
         </nav>
+        <div class="burger-wrp">
+          <a href="#0" class="burger"></a>
+        </div>
       </div>
       <h1 class="header-title">Блог о творчестве, спорте, и образе жизни</h1>
     </div>
@@ -62,7 +66,7 @@
   <section class="section-trends">
     <h2 class="section-title">Сейчас в тренде</h2>
     <article class="article-trends">
-      <div class="article-list-trend" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/trend1.jpg');">
+      <div class="article-list-trend article-list-image1">
         <div class="article-trend-information">
           <ul class="article-trend-items">
             <li class="article-trend-item"><a class="link" href="#0">Lifestyle</a></li>
@@ -71,7 +75,7 @@
           <h2 class="article-trend-title"><a class="link" href="#0">Сейчас в тренде: сад на подоконнике</a></h2>
         </div>
       </div>
-      <div class="article-list-trend" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/trend2.jpg');">
+      <div class="article-list-trend article-list-image2">
         <div class="article-trend-information">
           <ul class="article-trend-items">
             <li class="article-trend-item"><a class="link" href="#0">Food</a></li>
@@ -80,7 +84,7 @@
               на вкус?</a></h2>
         </div>
       </div>
-      <div class="article-list-trend" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/trend3.jpg');">
+      <div class="article-list-trend article-list-image3">
         <div class="article-trend-information">
           <ul class="article-trend-items">
             <li class="article-trend-item"><a class="link" href="#0">Lifestyle</a></li>
@@ -89,7 +93,7 @@
           <h2 class="article-trend-title"><a class="link" href="#0">Собираемся в первых поход в горы</a></h2>
         </div>
       </div>
-      <div class="article-list-trend" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/trend4.jpg');">
+      <div class="article-list-trend article-list-image4">
         <div class="article-trend-information">
           <ul class="article-trend-items">
             <li class="article-trend-item"><a class="link" href="#0">Food</a></li>
@@ -125,7 +129,7 @@
         </article>
         <article class="article">
           <div class="content-photo">
-            <img class="article-photo" src="images/last-post2.jpg" alt="Yoga" width="381">
+            <img class="article-photo" src="images/last-post2.jpg" alt="Yoga">
           </div>
           <div class="article-information">
             <ul class="article-items">
@@ -249,7 +253,10 @@
           </div>
         </section>
         <form class="search-form">
-          <input class="search" id="field-search" type="text" placeholder="Найти..." required></input>
+          <label class="search-form-group">
+            <input class="search" id="field-search" type="text" placeholder="Найти..." required></input>
+            <span class="visually-hidden">Поле ввода для поиска</span>
+          </label>
           <button class="search-icon" type="submit">
             <span class="visually-hidden">Поиск</span>
           </button>
@@ -257,7 +264,10 @@
         <section class="section">
           <h3 class="aside-title">Рассылка</h3>
           <form class="subscribe-form">
-            <input class="subscribe" id="field-subscribe" type="email" placeholder="Ваш email-адрес" required></input>
+            <label>
+              <input class="subscribe" id="field-subscribe" type="email" placeholder="Ваш email-адрес" required></input>
+              <span class="visually-hidden">Введите email-адрес для подписки</span>
+            </label>
             <button class="subscribe-button" type="submit">Подписаться</button>
           </form>
         </section>
@@ -292,10 +302,16 @@
       </aside>
     </div>
     <div class="shop">
-      <h2 class="section-title">Наши изделия</h2>
+      <h2 class="section-title section-title-products">Наши изделия</h2>
       <article class="products">
         <article class="product">
-          <a class="product-image" href="#0"><img src="images/shop-item-desk1.jpg" alt="Pillows for sofa"></a>
+          <a class="product-image" href="#0">
+            <picture>
+              <source srcset="images/shop-item-mobile1.jpg"  media="(max-width: 640px)">
+              <source srcset="images/shop-item-tablet1.jpg" media="(max-width: 1199px)">
+              <img src="images/shop-item-desk1.jpg" alt="Pillows for sofa">
+            </picture>
+          </a>
           <div class="product-information">
             <h2 class="product-title"><a class="link" href="#0">Подушки на диваны</a></h2>
             <p class="text-product">Набор из двух подушек с модными принтами. Видео о создании <a class="product-link"
@@ -310,7 +326,13 @@
           </div>
         </article>
         <article class="product">
-          <a class="product-image" href="#0"><img src="images/shop-item-desk2.jpg" alt="Bunny toy"></a>
+          <a class="product-image" href="#0">
+            <picture>
+              <source srcset="images/shop-item-mobile2.jpg" media="(max-width: 640px)">
+              <source srcset="images/shop-item-tablet2.jpg" media="(max-width: 1199px)">
+              <img src="images/shop-item-desk2.jpg" alt="Bunny toy">
+            </picture>
+          </a>
           <div class="product-information">
             <h2 class="product-title"><a class="link" href="#0">Игрушка зайчик</a></h2>
             <p class="text-product">Интерьерная рукодельная кукла «Зайчик», созданию которой посвящена <a
@@ -324,7 +346,13 @@
           </div>
         </article>
         <article class="product">
-          <a class="product-image" href="#0"><img src="images/shop-item-desk3.jpg" alt="Hexagonal frame"></a>
+          <a class="product-image" href="#0">
+            <picture>
+              <source srcset="images/shop-item-mobile3.jpg" media="(max-width: 640px)">
+              <source srcset="images/shop-item-tablet3.jpg" media="(max-width: 1199px)">
+              <img src="images/shop-item-desk3.jpg" alt="Hexagonal frame">
+            </picture>
+          </a>
           <div class="product-information">
             <h2 class="product-title"><a class="link" href="#0">Шестиугольная рамка</a></h2>
             <p class="text-product">Необычная рамка для украшения дома из видео <a class="product-link" href="#0">"Как
